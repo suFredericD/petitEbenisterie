@@ -43,6 +43,7 @@
 // DROP TABLE IF EXISTS `pages`;
 // CREATE TABLE IF NOT EXISTS `pages` (
 //   `id` int NOT NULL AUTO_INCREMENT,
+//   `filename` varchar(60) NOT NULL,
 //   `url` varchar(255) NOT NULL,
 //   `css` varchar(255) NOT NULL,
 //   `background` int DEFAULT NULL,
@@ -89,7 +90,7 @@
 //   `fulldescription` text NOT NULL,
 //   `infobulb` varchar(255) NOT NULL,
 //   `legend` varchar(150) NOT NULL,
-//   `picture_url` varchar(255) NOT NULL,
+//   `picture` varchar(255) NOT NULL,
 //   PRIMARY KEY (`id`)
 // ) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -226,5 +227,78 @@ function fct_SelectSite(){
     $arrReturn['City'] = $row['14'];
     $arrReturn['Url'] = $row['15'];
     $arrReturn['Picture'] = $row['16'];
+    return $arrReturn;
+}
+
+// Function to select one page from the 'pages' table
+//  Parameters  :
+//      strFilename     : filename of the page to select
+//  Return value    : array
+function fct_SelectPage($strFileName){
+    $strRequest = "SELECT * FROM `pages` WHERE `filename` = '" . $strFileName . "';";
+    $resLink = fct_RequestExec($strRequest);
+    $resLink->data_seek(0);
+    $row = $resLink->fetch_row();
+    $arrReturn['Id'] = $row['0'];
+    $arrReturn['Filename'] = $row['1'];
+    $arrReturn['Url'] = $row['2'];
+    $arrReturn['Css'] = $row['3'];
+    $arrReturn['Background'] = $row['4'];
+    $arrReturn['RubricId'] = $row['5'];
+    $arrReturn['RubricOrder'] = $row['6'];
+    $arrReturn['Title'] = $row['7'];
+    $arrReturn['Introduction'] = $row['8'];
+    $arrReturn['Content1'] = $row['9'];
+    $arrReturn['Content2'] = $row['10'];
+    $arrReturn['Content3'] = $row['11'];
+    $arrReturn['Content4'] = $row['12'];
+    $arrReturn['Content5'] = $row['13'];
+    return $arrReturn;
+}
+
+// Function to select all pages from the 'pages' table
+//  Parameters  : none
+//  Return value    : array
+function fct_SelectAllPages(){
+    $strRequest = "SELECT * FROM `pages` ORDER BY `rubric_order`;";
+    $resLink = fct_RequestExec($strRequest);
+    $arrReturn = array();
+    $intIndex = 0;
+    while ($row = $resLink->fetch_row()){
+        $arrReturn[$intIndex]['Id'] = $row['0'];
+        $arrReturn[$intIndex]['Filename'] = $row['1'];
+        $arrReturn[$intIndex]['Url'] = $row['2'];
+        $arrReturn[$intIndex]['Css'] = $row['3'];
+        $arrReturn[$intIndex]['Background'] = $row['4'];
+        $arrReturn[$intIndex]['RubricId'] = $row['5'];
+        $arrReturn[$intIndex]['RubricOrder'] = $row['6'];
+        $arrReturn[$intIndex]['Title'] = $row['7'];
+        $arrReturn[$intIndex]['Introduction'] = $row['8'];
+        $arrReturn[$intIndex]['Content1'] = $row['9'];
+        $arrReturn[$intIndex]['Content2'] = $row['10'];
+        $arrReturn[$intIndex]['Content3'] = $row['11'];
+        $arrReturn[$intIndex]['Content4'] = $row['12'];
+        $arrReturn[$intIndex]['Content5'] = $row['13'];
+        $intIndex++;
+    }
+    return $arrReturn;
+}
+// Function to select all rubrics from the 'rubrics' table
+//  Parameters  : none
+//  Return value    : array
+function fct_SelectAllRubrics(){
+    $strRequest = "SELECT * FROM `rubrics`;";
+    $resLink = fct_RequestExec($strRequest);
+    $arrReturn = array();
+    $intIndex = 0;
+    while ($row = $resLink->fetch_row()){
+        $arrReturn[$intIndex]['Id'] = $row['0'];
+        $arrReturn[$intIndex]['Title'] = $row['1'];
+        $arrReturn[$intIndex]['FullDescription'] = $row['2'];
+        $arrReturn[$intIndex]['InfoBulb'] = $row['3'];
+        $arrReturn[$intIndex]['Legend'] = $row['4'];
+        $arrReturn[$intIndex]['Picture'] = $row['5'];
+        $intIndex++;
+    }
     return $arrReturn;
 }
