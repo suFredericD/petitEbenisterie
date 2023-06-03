@@ -11,15 +11,193 @@
 /* COLORS
 
 */
+/* *** * FONTS * *** */
+@font-face{
+	font-family: "Calistoga";
+	src: url('../fonts/calistoga/calistoga-regular-webfont.eot') format('eot'),
+		 url('../fonts/calistoga/calistoga-regular-webfont.woff') format('woff'),
+		 url('../fonts/calistoga/calistoga-regular-webfont.ttf') format('truetype'),
+		 url('../fonts/calistoga/calistoga-regular-webfont.svg') format('svg');
+}
 /* *** * CONTAINERS * *** */
 body {
     background-color: rgb(84, 167, 121);
+    background-size: cover;
+	background-repeat: repeat-y;
+    background-image: url("../../media/backgrounds/wood_02.jpg");
+}
+.container {
+    opacity: 0.95;
+    background-color: transparent;
+    border: none;
+    margin: 5px;
+    padding: 5px;
+    display: inline-block;
+    justify-content: space-around;
+    align-items: center;
 }
 /* *** * HEADER * *** */
+#header {
+    opacity: 0.95;
+    background-color: transparent;
+    background-image: url("../../media/backgrounds/lightwood_02.jpg");
+    width: 80%;
+    display: flex;
+    align-items: center;
+    margin: 5px auto;
+    padding: 5px;
+    border-top: 3px outset #000;
+	border-right: 3px outset #000;
+	border-left: 3px outset #000;
+	border-bottom: 2px outset #000;
+	border-radius: 50px;
+    font-variant: small-caps;
+}
+#header img {
+    opacity: 0.95;
+    margin-left: 20px;
+    width: 15%;
+    height: auto;
+    border-radius: 25px 0 0 25px;
+}
+#header .header-content {
+    flex: 1;
+    text-align: center;
+}
+#header h1 {
+    opacity: 0.95;
+    display: inline-block;
+    width: 100%;
+    block-size: 100%;
+    flex-wrap: nowrap;
+    margin-bottom: 20px;
+    padding: 5px;
+    font-family: "Calistoga";
+    font-size: 60px;
+    color: #182818;
+    text-shadow: 2px 2px #ca9c51;
+    letter-spacing: 0.15em;
+    text-align: center;
+}
+#header p {
+    opacity: 0.94;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin: 5px;
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+}
+/* *** * REGULAR HTML TAGS * *** */
+a {
+    text-decoration: none;
+    color: #182818;
+    text-shadow: 1px 1px #ca9c51;
+    font-family: "Calistoga";
+    letter-spacing: 0.1em;
+    font-variant: small-caps;
+    transition: all 0.5s ease;
+}
+a:hover {
+    color: #ca9c51;
+    text-shadow: 2px 2px #182818;
+}
+/* *** * INDEX PAGE SPECIALS * *** */
+.index-rubrics {
+    background-color: transparent;
+    margin: 40px;
+    padding-top: 5px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    
+  }
+  
+  .rubrics-item {
+    background: url("../../media/backgrounds/wood_04.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px;
+    border: 2px outset #000;
+    border-radius: 25px;
+    box-shadow: 2px 4px 3px #000;
+  }
+  
+  .rubrics-item h2 {
+    background: url("../../media/backgrounds/lightwood_02.jpg");
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding: 10px 0;
+    border: 1px outset #000;
+    border-radius: 25px;
+    box-shadow: 2px 2px 2px #000;
+    color: #000;
+    text-shadow: 1px 1px #ca9c51;
+    font-family: "Calistoga";
+    letter-spacing: 0.1em;
+    font-variant: small-caps;
+    font-size: 30px;
+    text-align: center;
+  }
+  
+  .rubrics-item img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .rubrics-item p {
+    margin-top: 10px;
+  }
 /* *** * MAIN * *** */
+
 /* *** * FOOTER * *** */
 
 /* *** * NAVIGATION * *** */
+#menubar {
+    background-color: transparent;
+    background-image: url("../../media/backgrounds/lightwood_02.jpg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    margin: 4px auto;
+    padding: 5px;
+    border-top: 2px outset #000;
+    border-right: 2px outset #000;
+    border-left: 2px outset #000;
+    border-bottom: 1px outset #000;
+    border-radius: 35px;
+    box-shadow: 2px 4px 3px #000;
+    font-variant: small-caps;
+    font-family: "Calistoga";
+    font-size: 28px;
+    color: #182818;
+    text-shadow: 2px 2px #ca9c51;
+    letter-spacing: 0.1em;
+}
+.menu-item {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    transition: all 0.75s ease;
+}
+.menu-item:hover {
+    background: url("../../media/backgrounds/wood_01.jpg");
+}
+.menu-item-first {
+    border-right: 1px solid #000;
+}
+.menu-item-middles {
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}
+.menu-item-last {
+    border-left: 1px solid #000;
+}
 /* *** * BUTTONS * *** */
 /* *** * CONTENT * *** */
 /* *** * IMAGES * *** */

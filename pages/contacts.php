@@ -3,18 +3,18 @@
 // Project      : La Petite Ébénisterie en Herbe
 // Context      : showcase website of a starting business in Ardèche, France,
 //                specializing in the design & manufacturing of wooden furnitures & objects
-// File         : index.php
-// Role         : home page of the website
+// File         : contacts.php
+// Role         : contacts page of the website
 // Author       : Frédéric DANIAU
-// Creation     : 2023-06-02
+// Creation     : 2023-06-03
 // Last update  : 2021-06-03
 // =====================================================================================================
 // Include the database configuration file
-require('admin\dbConfig.php');
+require('..\admin\dbConfig.php');
 // Include the database request builder file
-require('admin\dbRequestBuilder.php');
+require('..\admin\dbRequestBuilder.php');
 // Include the display elements builder file
-require('scripts\menuBuilder.php');
+require('..\scripts\menuBuilder.php');
 
 
 // String   : script name
@@ -23,8 +23,6 @@ $strScriptName = basename($_SERVER['PHP_SELF']);
 $tabSiteInfos = fct_SelectSite();
 // Table    : page informations
 $tabPageInfos = fct_SelectPage($strScriptName);
-// Table    : rubrics informations
-$tabRubricsInfos = fct_SelectAllRubrics();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -42,13 +40,13 @@ $tabRubricsInfos = fct_SelectAllRubrics();
     <meta property="og:image" content="<?php echo $tabSiteInfos['Url'];?>">
     <meta name="viewport" content="<?php echo $tabSiteInfos['Picture'];?>">
     <favicon href="http://petiteben/media/logos/logo2.png" />
-    <link rel="stylesheet" href="config/css/<?php echo $tabPageInfos['Css'];?>" media="all">
+    <link rel="stylesheet" href="../config/css/main.css" media="all">
 </head>
 <!-- -- -- -- -- -- -- -- PAGE CONTENT -- -- -- -- -- -- -- -- -->
 <body>
     <div class="container">
         <div id="header">
-            <img src="media/logos/logo2.png" alt="logo" id="logo" aria-label="logo">
+            <img src="../media/logos/logo2.png" alt="logo" id="logo" aria-label="logo">
             <div class="header-content">
                 <h1>La Petite Ébénisterie<br>en Herbe<h1>
                 <p>Création & Fabrication</p>
@@ -58,27 +56,9 @@ $tabRubricsInfos = fct_SelectAllRubrics();
 <!-- -- -- -- -- -- -- -- NAVIGATION -- -- -- -- -- -- -- -- -->
 <?php fct_BuildMenu($strScriptName); ?>
 <!-- -- -- -- -- -- -- -- CONTENT -- -- -- -- -- -- -- -- -->
-    <div class="index-rubrics">
-<?php
-    for($i=1; $i<=count($tabRubricsInfos)-1; $i++){
-        $strPicture = "media/" . $tabRubricsInfos[$i]['Picture'];
-?>
-        <div class="rubrics-item">
-            <h2><?php echo $tabRubricsInfos[$i]['Title'];?></h2>
-            <div>
-                <img class="rubrics-img-main" src="<?php echo $strPicture;?>" alt="<?php echo $tabRubricsInfos[$i]['Title'];?>">
-                <p><?php echo $tabRubricsInfos[$i]['FullDescription'];?></p>
-            </div>
-            
 
-        </div>
-<?php
-    }
-
-?>
     </div>
-    </div>
-    <script src="scripts/js/main.js"></script>
+    <script src="../scripts/js/main.js"></script>
 </body>
 </html>
 ```
