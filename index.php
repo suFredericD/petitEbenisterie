@@ -23,6 +23,8 @@ $strScriptName = basename($_SERVER['PHP_SELF']);
 $tabSiteInfos = fct_SelectSite();
 // Table    : page informations
 $tabPageInfos = fct_SelectPage($strScriptName);
+// Table    : pages informations
+$tabPages = fct_SelectAllPages();
 // Table    : rubrics informations
 $tabRubricsInfos = fct_SelectAllRubrics();
 ?>
@@ -42,6 +44,9 @@ $tabRubricsInfos = fct_SelectAllRubrics();
     <meta property="og:image" content="<?php echo $tabSiteInfos['Url'];?>">
     <meta name="viewport" content="<?php echo $tabSiteInfos['Picture'];?>">
     <favicon href="http://petiteben/media/logos/logo2.png" />
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Alexandria|Beth+Ellen|Bevan|Crafty+Girls|Ubuntu" rel="stylesheet">
+    <!-- Attached CSS file -->
     <link rel="stylesheet" href="config/css/<?php echo $tabPageInfos['Css'];?>" media="all">
 </head>
 <!-- -- -- -- -- -- -- -- PAGE CONTENT -- -- -- -- -- -- -- -- -->
@@ -61,15 +66,23 @@ $tabRubricsInfos = fct_SelectAllRubrics();
     <div class="index-rubrics">
 <?php
     for($i=1; $i<=count($tabRubricsInfos)-1; $i++){
-        $strPicture = "media/" . $tabRubricsInfos[$i]['Picture'];
+        $strPicture = "media/pictures/rubrics/" . $tabRubricsInfos[$i]['Picture'];
+        $strRplace = $tabRubricsInfos[$i]['Title'] . " rubric illustrating picture";
+        $strUrl = "pages/" . $tabPages[$i]['Filename'];
 ?>
         <div class="rubrics-item">
-            <h2><?php echo $tabRubricsInfos[$i]['Title'];?></h2>
-            <div>
-                <img class="rubrics-img-main" src="<?php echo $strPicture;?>" alt="<?php echo $tabRubricsInfos[$i]['Title'];?>">
-                <p><?php echo $tabRubricsInfos[$i]['FullDescription'];?></p>
+            <a class="home-rubric-title" href="<?php echo $strUrl;?>">
+                <h2><?php echo $tabRubricsInfos[$i]['Title'];?></h2>
+            </a>
+            <div class="rubrics-item-container">
+                <div class="rubric-img-container">
+                    <img class="rubrics-img-main" src="<?php echo $strPicture;?>" alt="<?php echo $strRplace;?>" aria-label="<?php echo $strRplace;?>">
+                    <?php echo $tabRubricsInfos[$i]['Legend'];?>
+                </div>
+                <div class="index-rubric-description">
+                    <p><?php echo $tabRubricsInfos[$i]['FullDescription'];?></p>
+                </div>
             </div>
-            
 
         </div>
 <?php
@@ -82,3 +95,11 @@ $tabRubricsInfos = fct_SelectAllRubrics();
 </body>
 </html>
 ```
+          TITRE
+            |
+    image   |   sous titre
+            |
+ -----------|-----------------
+       PARAGRAPHE
+       PARAGRAPHE
+comment faire en css ?

@@ -20,6 +20,7 @@
 		 url('../fonts/calistoga/calistoga-regular-webfont.svg') format('svg');
 }
 /* *** * CONTAINERS * *** */
+* {box-sizing: border-box;}
 body {
     background-color: rgb(84, 167, 121);
     background-size: cover;
@@ -102,7 +103,7 @@ a {
 a:hover {
     color: #ca9c51;
     text-shadow: 2px 2px #182818;
-}
+}                               
 /* *** * INDEX PAGE SPECIALS * *** */
 .index-rubrics {
     background-color: transparent;
@@ -111,43 +112,102 @@ a:hover {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
-    
   }
-  
   .rubrics-item {
+    position: relative;
     background: url("../../media/backgrounds/wood_04.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
     padding: 20px;
     border: 2px outset #000;
     border-radius: 25px;
     box-shadow: 2px 4px 3px #000;
-  }
-  
-  .rubrics-item h2 {
-    background: url("../../media/backgrounds/lightwood_02.jpg");
-    margin-top: 0;
-    margin-bottom: 10px;
-    padding: 10px 0;
-    border: 1px outset #000;
-    border-radius: 25px;
-    box-shadow: 2px 2px 2px #000;
     color: #000;
-    text-shadow: 1px 1px #ca9c51;
+    text-shadow: 1px 1px #000;
+  }
+  .home-rubric-title {
+    background: url("../../media/backgrounds/lightwood_02.jpg");
+    width: 100%;
+    margin: 0;
+    margin-bottom: 20px;
+    padding: 0;
+    border: none;
+    border-radius: 25px;
+    transition: all 0.5s ease;
+  }
+  .home-rubric-title:hover {
+    background: url("../../media/backgrounds/wood02.jpg");
+    color: #331b00;
+    text-shadow: 2px 3px #000;
+  }
+  .home-rubric-title h2 {
+    width: 100%;
+    background-color: transparent;
+    background: url("../../media/backgrounds/lightwood_02.jpg");
+    margin: 0;
+    padding: 10px 0;
+    border: 1px outset #331b00;
+    border-radius: 25px;
+    box-shadow: 2px 2px 2px #444;
     font-family: "Calistoga";
+    font-size: 30px;
     letter-spacing: 0.1em;
     font-variant: small-caps;
-    font-size: 30px;
     text-align: center;
   }
-  
-  .rubrics-item img {
-    max-width: 100%;
-    height: auto;
+  .rubrics-item-container {
+    align-items: center;
+    justify-content: space-between;
   }
-  
-  .rubrics-item p {
+  .rubric-img-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: fit-content;
+    margin-bottom: 10px;
+    background-color: transparent;
+    margin: 0;
+    padding: 10px;
+    border: none;
+    border-top-right-radius: 50px;
+    color: #000;
+    text-shadow: 1px 1px #555;
+    font-family: "Bevan";
+    font-size: 34px;
+    text-indent: 10px;
+    vertical-align: middle;
+    text-align: left;
+  }
+  .rubrics-item img {
+    width: 25%;
+    height: auto;
+    border: 3px inset #331b00;
+    border-radius: 50px;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 16px;
+  }
+  .index-rubric-description p {
+    opacity: 0.95;
+    display: inline-block;
+    background-color: #182818;
     margin-top: 10px;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    border: none;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    font-family: "Crafty Girls";
+    color: #ca9c51;
+    font-size: 20px;
+    text-align: justify;
+    text-indent: 10px;
+    text-shadow: 1px 1px #000;
   }
 /* *** * MAIN * *** */
 
