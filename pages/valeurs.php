@@ -45,7 +45,7 @@ $tabSectionsInfos = fct_SelectSectionsByRubricId($tabPageInfos['RubricId']);
     <meta property="og:image" content="<?php echo $tabSiteInfos['Url'];?>">
     <meta name="viewport" content="<?php echo $tabSiteInfos['Picture'];?>">
     <favicon href="http://petiteben/media/logos/logo2.png" />
-<!-- Google fonts -->
+    <!-- Google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Alexandria|Beth+Ellen|Bevan|Crafty+Girls|Finger Paint|Ubuntu" rel="stylesheet">
     <!-- Attached CSS file -->
     <link rel="stylesheet" href="../config/css/main.css" media="all">
@@ -75,7 +75,7 @@ $tabSectionsInfos = fct_SelectSectionsByRubricId($tabPageInfos['RubricId']);
             <p><?php echo $tabSectionsInfos[0]['Content'];?></p>
         </div>
     </section>
-    
+<!-- -- -- -- -- -- -- -- JAVASCRIPT -- -- -- -- -- -- -- -- -->
     <script src="../scripts/js/main.js"></script>
 </body>
 </html>

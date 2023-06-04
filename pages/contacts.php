@@ -7,7 +7,7 @@
 // Role         : contacts page of the website
 // Author       : Frédéric DANIAU
 // Creation     : 2023-06-03
-// Last update  : 2021-06-03
+// Last update  : 2021-06-04
 // =====================================================================================================
 // Include the database configuration file
 require('..\admin\dbConfig.php');
@@ -23,6 +23,8 @@ $strScriptName = basename($_SERVER['PHP_SELF']);
 $tabSiteInfos = fct_SelectSite();
 // Table    : page informations
 $tabPageInfos = fct_SelectPage($strScriptName);
+// Table    : contacts informations
+$tabContactsInfos = fct_SelectContacts();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -40,7 +42,11 @@ $tabPageInfos = fct_SelectPage($strScriptName);
     <meta property="og:image" content="<?php echo $tabSiteInfos['Url'];?>">
     <meta name="viewport" content="<?php echo $tabSiteInfos['Picture'];?>">
     <favicon href="http://petiteben/media/logos/logo2.png" />
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Alexandria|Beth+Ellen|Bevan|Crafty+Girls|Finger+Paint|Ubuntu" rel="stylesheet">
+    <!-- Attached CSS file -->
     <link rel="stylesheet" href="../config/css/main.css" media="all">
+    <link rel="stylesheet" href="../config/css/contacts.css" media="all">
 </head>
 <!-- -- -- -- -- -- -- -- PAGE CONTENT -- -- -- -- -- -- -- -- -->
 <body>
@@ -53,12 +59,36 @@ $tabPageInfos = fct_SelectPage($strScriptName);
                 <p>Mobilier - Bijoux - Décoration</p>
             </div>
         </div>
+    </div>
 <!-- -- -- -- -- -- -- -- NAVIGATION -- -- -- -- -- -- -- -- -->
 <?php fct_BuildMenu($strScriptName); ?>
 <!-- -- -- -- -- -- -- -- CONTENT -- -- -- -- -- -- -- -- -->
+    <div id="contacts-main">
+<?php   for($i=0; $i<count($tabContactsInfos); $i++){
+            $strIconClasse = $tabContactsInfos[$i]['Icon'];
 
-    </div>
+
+?>
+        <div class="contacts-item">
+            <div class="social-icon"><span class="<?php echo $strIconClasse;?>"></span></div>
+            <div class="social-name"><?php echo $tabContactsInfos[$i]['Network'];?></div>
+<?php       if($tabContactsInfos[$i]['Network'] == 'Téléphone'){
+?>
+            <div class="social-phone"><?php echo $tabContactsInfos[$i]['Url'];?></div>
+<?php       } elseif($tabContactsInfos[$i]['Network'] == 'Email'){ ?>
+            <div class="social-mail">
+                <a href="mailto:<?php echo $tabContactsInfos[$i]['Url'];?>">La Petite Ébénisterie en Herbe</a>
+            </div>
+<?php       } else { ?>
+            
+<?php       } ?>
+
+        </div>
+<?php
+}?>
+<!-- -- -- -- -- -- -- -- JAVASCRIPT -- -- -- -- -- -- -- -- -->
     <script src="../scripts/js/main.js"></script>
+    <script src="https://kit.fontawesome.com/91b2ef136e.js" crossorigin="anonymous"></script>
 </body>
 </html>
 ```

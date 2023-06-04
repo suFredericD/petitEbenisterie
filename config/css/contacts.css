@@ -1,0 +1,106 @@
+/*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***/
+/*  Project      : La Petite Ébénisterie en Herbe
+    Context      : showcase website of a starting business in Ardèche, France,
+                   specializing in the design & manufacturing of wooden furnitures & objects
+    File         : contacts.css
+    Role         : css for the "Contacts" page of the website
+    Author       : Frédéric DANIAU
+    Creation     : 2023-06-04
+    Last update  : 2021-06-04
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***/
+/* COLORS
+
+*/
+/* *** * FONTS * *** */
+
+/* *** * CONTAINERS * *** */
+#contacts-main {
+    border: 3px solid #000;
+    margin: 20px;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url("../../media/backgrounds/wood_01.jpg");
+    background-size: cover;
+    border: 3px solid #000;
+    border-radius: 50px;
+    box-shadow: 2px 2px 2px #444;
+    padding: 40px;
+    padding-left: 5%;
+}
+.contacts-item {
+    background: url("../../media/backgrounds/lightwood_02.jpg");
+    display: flex;
+    justify-content: left;
+    align-items: space-between;
+    margin: 20px 15%;
+    padding: 20px;
+    color: #182818;
+    text-shadow: 2px 2px #ca9c51;
+}
+/* *** * MAIN * *** */
+.social-icon {
+    margin-right: 20px;
+    font-size: 30px;
+}
+.social-name {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: "Calistoga";
+    font-size: 24px;
+    border: 1px solid #000;
+}
+.social-phone {
+    width: 100%;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: "Crafty Girls", cursive;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 0.125em;
+}
+.social-mail {
+    width: 100%;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 26px;
+}
+.social-mail a{
+    animation: contact-blink 2s infinite;
+}
+.social-link {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+/* *** * BUTTONS * *** */
+/* *** * CONTENT * *** */
+/* *** * IMAGES * *** */
+/* *** * FORMS * *** */
+/* *** * TABLES * *** */
+
+/* *** * MEDIA QUERIES * *** */
+/* *** * ANIMATIONS * *** */
+@keyframes contact-blink {
+    0% {
+        color: #182818;
+        text-shadow: 2px 2px #ca9c51;
+    }
+    50% {
+        color: #331b00;
+        text-shadow: 1px 1px #182818;
+    }
+    100% {
+        color: #182818;
+        text-shadow: 2px 2px #ca9c51;
+    }
+}
