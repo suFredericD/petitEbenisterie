@@ -45,7 +45,7 @@ $tabRubricsInfos = fct_SelectAllRubrics();
     <meta name="viewport" content="<?php echo $tabSiteInfos['Picture'];?>">
     <favicon href="http://petiteben/media/logos/logo2.png" />
     <!-- Google fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Alexandria|Beth+Ellen|Bevan|Crafty+Girls|Ubuntu" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alexandria|Beth+Ellen|Bevan|Crafty+Girls|Finger+Paint|Ubuntu" rel="stylesheet">
     <!-- Attached CSS file -->
     <link rel="stylesheet" href="config/css/<?php echo $tabPageInfos['Css'];?>" media="all">
 </head>
@@ -69,9 +69,10 @@ $tabRubricsInfos = fct_SelectAllRubrics();
         $strPicture = "media/pictures/rubrics/" . $tabRubricsInfos[$i]['Picture'];
         $strRplace = $tabRubricsInfos[$i]['Title'] . " rubric illustrating picture";
         $strUrl = "pages/" . $tabPages[$i]['Filename'];
+        $strTitleUrl = "Consulter la page '" . $tabPages[$i]['Title'] ."'...";
 ?>
         <div class="rubrics-item">
-            <a class="home-rubric-title" href="<?php echo $strUrl;?>">
+            <a class="home-rubric-title" href="<?php echo $strUrl;?>" title="<?php echo $strTitleUrl;?>">
                 <h2><?php echo $tabRubricsInfos[$i]['Title'];?></h2>
             </a>
             <div class="rubrics-item-container">
@@ -95,11 +96,3 @@ $tabRubricsInfos = fct_SelectAllRubrics();
 </body>
 </html>
 ```
-          TITRE
-            |
-    image   |   sous titre
-            |
- -----------|-----------------
-       PARAGRAPHE
-       PARAGRAPHE
-comment faire en css ?

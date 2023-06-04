@@ -7,7 +7,7 @@
 // Role         : mindset of the compagny presentation page of the website
 // Author       : Frédéric DANIAU
 // Creation     : 2023-06-03
-// Last update  : 2021-06-03
+// Last update  : 2021-06-04
 // =====================================================================================================
 // Include the database configuration file
 require('..\admin\dbConfig.php');
@@ -23,7 +23,12 @@ $strScriptName = basename($_SERVER['PHP_SELF']);
 $tabSiteInfos = fct_SelectSite();
 // Table    : page informations
 $tabPageInfos = fct_SelectPage($strScriptName);
+// Table    : rubric informations
+$tabRubricInfos = fct_SelectRubricById($tabPageInfos['RubricId']);
+// Table    : sections informations
+$tabSectionsInfos = fct_SelectSectionsByRubricId($tabPageInfos['RubricId']);
 ?>
+<!-- --- --- --- --- --- LA PETITE HEBENISTERIE EN HERBE --- --- --- --- -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -40,8 +45,11 @@ $tabPageInfos = fct_SelectPage($strScriptName);
     <meta property="og:image" content="<?php echo $tabSiteInfos['Url'];?>">
     <meta name="viewport" content="<?php echo $tabSiteInfos['Picture'];?>">
     <favicon href="http://petiteben/media/logos/logo2.png" />
+<!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Alexandria|Beth+Ellen|Bevan|Crafty+Girls|Finger Paint|Ubuntu" rel="stylesheet">
+    <!-- Attached CSS file -->
     <link rel="stylesheet" href="../config/css/main.css" media="all">
-
+    <link rel="stylesheet" href="../config/css/valeurs.css" media="all">
 </head>
 <!-- -- -- -- -- -- -- -- PAGE CONTENT -- -- -- -- -- -- -- -- -->
 <body>
@@ -54,11 +62,20 @@ $tabPageInfos = fct_SelectPage($strScriptName);
                 <p>Mobilier - Bijoux - Décoration</p>
             </div>
         </div>
+    </div>
 <!-- -- -- -- -- -- -- -- NAVIGATION -- -- -- -- -- -- -- -- -->
 <?php fct_BuildMenu($strScriptName); ?>
 <!-- -- -- -- -- -- -- -- CONTENT -- -- -- -- -- -- -- -- -->
-
-    </div>
+<section id="valeurs-main">
+        <div id="valeurs-img">
+            <img src="../media/pictures/rubrics/valeurs01.jpg" alt="Valeurs" id="" aria-label="Valeurs illustration picture">
+            <?php echo $tabSectionsInfos[0]['Title'];?>
+        </div>
+        <div id="valeurs-text">
+            <p><?php echo $tabSectionsInfos[0]['Content'];?></p>
+        </div>
+    </section>
+    
     <script src="../scripts/js/main.js"></script>
 </body>
 </html>

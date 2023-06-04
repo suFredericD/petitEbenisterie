@@ -1,4 +1,3 @@
-# lPEeh  
 # La Petite Ébénisterie en Herbe  
 
 
@@ -11,4 +10,4 @@ spécialisée dans la **conception** et la **fabrication** d'objets en **bois** 
 
 
 
-Référent du projet : Frédéric DANIAU, ilric6666@gmail.com
+Référent du projet : Frédéric DANIAU, <ilric6666@gmail.com>

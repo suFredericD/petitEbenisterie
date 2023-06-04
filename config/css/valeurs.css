@@ -1,0 +1,84 @@
+/*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***/
+/*  Project      : La Petite Ébénisterie en Herbe
+    Context      : showcase website of a starting business in Ardèche, France,
+                   specializing in the design & manufacturing of wooden furnitures & objects
+    File         : valeurs.css
+    Role         : css for the "Nos Valeurs" page of the website
+    Author       : Frédéric DANIAU
+    Creation     : 2023-06-04
+    Last update  : 2021-06-04
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***/
+/* COLORS
+
+*/
+/* *** * FONTS * *** */
+
+/* *** * CONTAINERS * *** */
+#valeurs-main {
+    border: 3px solid #000;
+    margin: 20px;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url("../../media/backgrounds/wood_01.jpg");
+    background-size: cover;
+    border: 3px solid #000;
+    border-radius: 50px;
+    box-shadow: 2px 2px 2px #444;
+}
+/* *** * MAIN * *** */
+#valeurs-img {
+    margin: 10px auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    font-family: "Finger Paint";
+    color: #182818;
+    text-shadow: 2px 2px 2px #ca9c51;
+    font-size: 55px;
+    font-weight: bold;
+    letter-spacing: 0.15em;
+    line-height: 120px;
+}
+#valeurs-img img {
+    margin: 10px;
+    max-height: 500px;
+    border: none;
+    border-radius: 140px;
+}
+#valeurs-text {
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: left;
+    display: flex;
+}
+#valeurs-text p {
+    background-color: #182818;
+    align-items: center;
+    word-wrap: break-word;
+    font-family: "Crafty Girls";
+    font-size: 26px;
+    text-align: justify;
+    color: #ca9c51;
+    text-shadow: #000;
+    display: inline-block;
+    padding: 20px 30px;
+    text-indent: 20px;
+    border: none;
+    border-radius: 70px;
+}
+#valeurs-text p::first-letter {
+    font-size: 30px;
+    color: #92ca51;
+}
+/* *** * BUTTONS * *** */
+/* *** * CONTENT * *** */
+/* *** * IMAGES * *** */
+/* *** * FORMS * *** */
+/* *** * TABLES * *** */
+
+/* *** * MEDIA QUERIES * *** */
+/* *** * ANIMATIONS * *** */

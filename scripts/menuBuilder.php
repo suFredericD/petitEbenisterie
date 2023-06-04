@@ -38,7 +38,7 @@ function fct_BuildMenu($strScriptName){
 <?php
             } else { ?>
         <a class="menu-item <?php echo $strClasse;?>" href="<?php echo "../" . $tabPages[$i]['Filename'] ?>"><?php echo "Accueil";?></a>
-        <?php
+<?php
             }
         } else { ?>
         <a class="menu-item <?php echo $strClasse;?>" href="<?php echo $strPath . $tabPages[$i]['Filename'] ?>"><?php echo $tabPages[$i]['Title'];?></a>
@@ -46,6 +46,6 @@ function fct_BuildMenu($strScriptName){
         }
     } ?>
     </nav>
-
+<!-- NAVIGATION END -->
 <?php
 }
