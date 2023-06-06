@@ -103,6 +103,45 @@
 /* *** * IMAGES * *** */
 /* *** * FORMS * *** */
 /* *** * TABLES * *** */
-
-/* *** * MEDIA QUERIES * *** */
 /* *** * ANIMATIONS * *** */
+/* *** * MEDIA QUERIES * *** */
+@media screen and (max-width: 1024px) {
+    #apropos-img img {
+        max-width: 400px;
+    }
+
+}
+@media screen and (max-width: 768px) {
+    #apropos-img img {
+        max-width: 100px;
+    }
+    #apropos-img {
+        font-size: 24px;
+    }
+    #estampille-text {
+        font-size: 18px;
+    }
+
+}
+@media screen and (max-width: 480px) {
+    #apropos-img img {
+        max-width: 100px;
+    }
+    #apropos-img {
+        font-size: 24px;
+    }
+    #estampille-text {
+        font-size: 18px;
+    }
+}
+@media screen and (max-width: 320px) {
+    #apropos-img img {
+        max-width: 100px;
+    }
+    #apropos-img {
+        font-size: 24px;
+    }
+    #estampille-text {
+        font-size: 18px;
+    }
+}

@@ -24,6 +24,7 @@
 }
 .creations-type {
     background-color: #42291a;
+    background-image: url("../../media/backgrounds/whitewood01.jpeg");
     background-repeat: repeat-y;
     background-size: cover;
     display: block;
@@ -44,7 +45,7 @@
     justify-content: center;
 }
 .creation-item {
-    background: url("../../media/backgrounds/whitewood01.jpeg");
+    background: url("../../media/backgrounds/darkwood_03.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -111,7 +112,13 @@
 .creations-type h2 span {
     margin-right: 20px;
 }
+.creation-description {
+    font-family: "Crafty Girls", incursive;
+    font-size: 24px;
+    color: #275a27;
+    text-shadow: 1px 1px #ca9c51;
 
+}
 /* *** * IMAGES * *** */
 figure {
     display: inline-block;

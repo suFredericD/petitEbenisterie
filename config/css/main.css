@@ -22,13 +22,12 @@
 /* *** * CONTAINERS * *** */
 * {box-sizing: border-box;}
 body {
-    background-color: rgb(84, 167, 121);
     background-size: cover;
 	  background-repeat: repeat-y;
-    background-image: url("../../media/backgrounds/wood_02.jpg");
+    background-image: url("../../media/backgrounds/723810.jpg");
 }
 .container {
-    opacity: 0.95;
+    opacity: 1;
     background-color: transparent;
     border: none;
     margin: 5px auto;
@@ -63,7 +62,6 @@ body {
     border-radius: 25px 0 0 25px;
 }
 #header .header-content {
-    flex: 1;
     text-align: center;
 }
 #header h1 {
@@ -110,19 +108,48 @@ a:hover {
     background-color: transparent;
     margin: 40px;
     padding-top: 5px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
   }
+#home-header {
+  width: 90%;
+  display: flex;
+  flex-wrap: no-wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  vertical-align: middle;
+  margin-bottom: 30px;
+  font-family: "Calistoga";
+  text-shadow: 2px 2px #006108;
+  animation: hand-blink 4s infinite;
+}
+#home-header span {
+  font-size: 65px;
+}
+#home-header h1 {
+    width: 90%;
+    background-color: transparent;
+    margin: 0 auto;
+    margin-left: 40px;
+    margin-right: 40px;
+    padding: 10px;
+    font-size: 50px;    
+}
   .rubrics-item {
+    opacity: 1;
+    width: 45%;
     position: relative;
-    background: url("../../media/backgrounds/wood_04.jpg");
+    background: url("../../media/backgrounds/darkwood_01.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: space-around;
+    margin-bottom: 20px;
     padding: 20px;
     border: 2px outset #000;
     border-radius: 25px;
@@ -141,7 +168,7 @@ a:hover {
     transition: all 0.5s ease;
   }
   .home-rubric-title:hover {
-    background: url("../../media/backgrounds/wood02.jpg");
+    background: url("../../media/backgrounds/wood_02.jpg");
     color: #331b00;
     text-shadow: 2px 3px #000;
   }
@@ -150,17 +177,18 @@ a:hover {
     background-color: transparent;
     background: url("../../media/backgrounds/lightwood_02.jpg");
     margin: 0;
-    padding: 10px 0;
+    padding: 20px 0;
     border: 1px outset #331b00;
     border-radius: 25px;
     box-shadow: 2px 2px 2px #444;
     font-family: "Calistoga";
-    font-size: 30px;
-    letter-spacing: 0.1em;
+    font-size: 36px;
+    letter-spacing: 0.125em;
     font-variant: small-caps;
     text-align: center;
   }
   .rubrics-item-container {
+    width: 100%;
     align-items: flex-start;
     justify-content: space-between;
   }
@@ -188,26 +216,33 @@ a:hover {
     text-shadow: 2px 2px 2px #ca9c51;
     letter-spacing: 0.12em;
   }
+  .home-rubric-img-link {
+
+  }
   .rubrics-item img {
     margin-right: 20px;
-    height: 200px;
     border: 3px inset #331b00;
     border-radius: 50px;
     font-family: "Ubuntu", sans-serif;
     font-size: 16px;
   }
-  .index-rubric-description p {
+  .rubrics-img-main {
+    width: 80%;
     opacity: 0.95;
+  }
+  .index-rubric-description p {
+    opacity: 1;
     display: inline-block;
-    background-color: #182818;
+    /* background-color: #182818; */
     margin-top: 10px;
+    margin-bottom: 0;
     padding-top: 10px;
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 20px;
     border: none;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
     font-family: "Crafty Girls";
     color: #ca9c51;
     font-size: 20px;
@@ -217,6 +252,19 @@ a:hover {
 .index-rubric-description p::first-letter {
     color: #92ca51;
     font-size: 24px;
+    
+}
+.index-rubric-description p a {
+    font-family: "Crafty Girls", incursive;
+    font-size: 20px;
+    text-decoration: underline;
+    color: #331b00;
+    font-variant: normal;
+    animation: fade-out 4s infinite;
+}
+.index-rubric-description p a:hover {
+    color: #92ca51;
+    text-shadow: 1px 1px #ca9c51;
 }
 /* *** * MAIN * *** */
 
@@ -269,9 +317,54 @@ a:hover {
 }
 /* *** * BUTTONS * *** */
 /* *** * CONTENT * *** */
+.petiteben {
+  font-weight: bold;
+  font-style: italic;
+  color: #4b810c;
+  text-shadow: 1px 1px #ca9c51;
+}
 /* *** * IMAGES * *** */
 /* *** * FORMS * *** */
 /* *** * TABLES * *** */
-
-/* *** * MEDIA QUERIES * *** */
 /* *** * ANIMATIONS * *** */
+@keyframes hand-blink {
+  0% {
+    color: #331b00;
+  }
+  50% {
+    color: transparent;
+  }
+  100% {
+    color: #331b00;
+  }
+}
+@keyframes fade-out {
+  0% {
+    opacity: 0.95;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.95;
+  }
+}
+/* *** * MEDIA QUERIES * *** */
+@media screen and (max-width: 1200px) {
+
+}
+@media screen and (max-width: 992px) {
+
+}
+@media screen and (max-width: 768px) {
+
+}
+@media screen and (max-width: 576px) {
+
+}
+@media screen and (max-width: 480px) {
+
+}
+@media screen and (max-width: 360px) {
+
+}

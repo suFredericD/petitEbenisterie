@@ -33,6 +33,7 @@ $tabRubricsInfos = fct_SelectAllRubrics();
 <head>
     <meta charset="UTF-8">
     <title><?php echo $tabSiteInfos['Title'];?></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?php echo $tabSiteInfos['MetaDescription'];?>">
     <meta name="keywords" content="<?php echo $tabSiteInfos['MetaKeywords'];?>">
     <meta name="author" content="<?php echo $tabSiteInfos['MetaAuthor'];?>">
@@ -42,8 +43,8 @@ $tabRubricsInfos = fct_SelectAllRubrics();
     <meta property="og:description" content="<?php echo $tabSiteInfos['MetaDescription'];?>">
     <meta property="og:url" content="<?php echo $tabSiteInfos['MetaDescription'];?>">
     <meta property="og:image" content="<?php echo $tabSiteInfos['Url'];?>">
-    <meta name="viewport" content="<?php echo $tabSiteInfos['Picture'];?>">
-    <favicon href="http://petiteben/media/logos/logo2.png" />
+
+    <favicon href="media/logos/logo2.png" />
     <!-- Google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Alexandria|Beth+Ellen|Bevan|Crafty+Girls|Finger+Paint|Ubuntu" rel="stylesheet">
     <!-- Attached CSS file -->
@@ -64,6 +65,11 @@ $tabRubricsInfos = fct_SelectAllRubrics();
 <?php fct_BuildMenu($strScriptName); ?>
 <!-- -- -- -- -- -- -- -- CONTENT -- -- -- -- -- -- -- -- -->
     <div class="index-rubrics">
+        <div id="home-header">
+            <span class="fa-regular fa-hand-point-down"></span>
+            <h1>Visitez la Petite Ébénisterie en Herbe</h1>
+            <span class="fa-regular fa-hand-point-down"></span>
+        </div>
 <?php
     for($i=1; $i<=count($tabRubricsInfos)-1; $i++){
         $strPicture = "media/pictures/rubrics/" . $tabRubricsInfos[$i]['Picture'];
@@ -77,7 +83,8 @@ $tabRubricsInfos = fct_SelectAllRubrics();
             </a>
             <div class="rubrics-item-container">
                 <div class="rubric-img-container">
-                    <img class="rubrics-img-main" src="<?php echo $strPicture;?>" alt="<?php echo $strRplace;?>" aria-label="<?php echo $strRplace;?>">
+                    <a class="home-rubric-img-link" href="<?php echo $strUrl;?>" title="<?php echo $strTitleUrl;?>">
+                        <img class="rubrics-img-main" src="<?php echo $strPicture;?>" alt="<?php echo $strRplace;?>" aria-label="<?php echo $strRplace;?>"></a>
                     <?php echo $tabRubricsInfos[$i]['Legend'];?>
                 </div>
                 <div class="index-rubric-description">
@@ -92,7 +99,9 @@ $tabRubricsInfos = fct_SelectAllRubrics();
 ?>
     </div>
     </div>
+<!-- -- -- -- -- -- -- -- JAVASCRIPT -- -- -- -- -- -- -- -- -->
     <script src="scripts/js/main.js"></script>
+    <script src="https://kit.fontawesome.com/91b2ef136e.js" crossorigin="anonymous"></script>
 </body>
 </html>
 ```

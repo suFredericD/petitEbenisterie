@@ -43,7 +43,7 @@ $tabSectionsInfos = fct_SelectSectionsByRubricId($tabPageInfos['RubricId']);
     <meta property="og:description" content="<?php echo $tabSiteInfos['MetaDescription'];?>">
     <meta property="og:url" content="<?php echo $tabSiteInfos['MetaDescription'];?>">
     <meta property="og:image" content="<?php echo $tabSiteInfos['Url'];?>">
-    <meta name="viewport" content="<?php echo $tabSiteInfos['Picture'];?>">
+    <meta name="viewport" content="<?php echo $tabSiteInfos['MetaViewport'];?>">
     <favicon href="http://petiteben/media/logos/logo2.png" />
     <!-- Google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Alexandria|Beth+Ellen|Bevan|Crafty+Girls|Finger Paint|Ubuntu" rel="stylesheet">
