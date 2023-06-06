@@ -6,7 +6,7 @@
     Role         : css for the "Créations" page of the website
     Author       : Frédéric DANIAU
     Creation     : 2023-06-04
-    Last update  : 2021-06-04
+    Last update  : 2021-06-06
 *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***/
 /* COLORS
 
@@ -152,6 +152,23 @@ figure figcaption {
 }
 /* *** * FORMS * *** */
 /* *** * TABLES * *** */
-
-/* *** * MEDIA QUERIES * *** */
 /* *** * ANIMATIONS * *** */
+/* *** * MEDIA QUERIES * *** */
+@media screen and (max-width: 1200px) {
+
+}
+@media screen and (max-width: 992px) {
+
+}
+@media screen and (max-width: 768px) {
+
+}
+@media screen and (max-width: 576px) {
+
+}
+@media screen and (max-width: 480px) {
+
+}
+@media screen and (max-width: 360px) {
+
+}

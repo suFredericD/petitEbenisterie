@@ -7,7 +7,7 @@
 // Role         : mindset of the compagny presentation page of the website
 // Author       : Frédéric DANIAU
 // Creation     : 2023-06-03
-// Last update  : 2021-06-04
+// Last update  : 2021-06-06
 // =====================================================================================================
 // Include the database configuration file
 require('..\admin\dbConfig.php');
