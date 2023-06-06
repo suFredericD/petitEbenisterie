@@ -7,7 +7,7 @@
 // Role         : creations presentation page of the website
 // Author       : Frédéric DANIAU
 // Creation     : 2023-06-03
-// Last update  : 2021-06-03
+// Last update  : 2021-06-04
 // =====================================================================================================
 // Include the database configuration file
 require('..\admin\dbConfig.php');
@@ -23,7 +23,14 @@ $strScriptName = basename($_SERVER['PHP_SELF']);
 $tabSiteInfos = fct_SelectSite();
 // Table    : page informations
 $tabPageInfos = fct_SelectPage($strScriptName);
+// Table    : creations types
+$tabCreationsTypes = fct_SelectAllTypesCreation();
+// Table    : sort of creations
+$tabCreationsSorts = fct_SelectAllSortsCreation();
+// Table    : creations
+$tabCreations = fct_SelectAllCreationsOrderByTypeAndSort();
 ?>
+<!-- --- --- --- --- --- LA PETITE HEBENISTERIE EN HERBE --- --- --- --- -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -40,8 +47,11 @@ $tabPageInfos = fct_SelectPage($strScriptName);
     <meta property="og:image" content="<?php echo $tabSiteInfos['Url'];?>">
     <meta name="viewport" content="<?php echo $tabSiteInfos['Picture'];?>">
     <favicon href="http://petiteben/media/logos/logo2.png" />
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Alexandria|Beth+Ellen|Bevan|Crafty+Girls|Finger+Paint|Ubuntu" rel="stylesheet">
+    <!-- Attached CSS file -->
     <link rel="stylesheet" href="../config/css/main.css" media="all">
-
+    <link rel="stylesheet" href="../config/css/creations.css" media="all">
 </head>
 <!-- -- -- -- -- -- -- -- PAGE CONTENT -- -- -- -- -- -- -- -- -->
 <body>
@@ -54,11 +64,51 @@ $tabPageInfos = fct_SelectPage($strScriptName);
                 <p>Mobilier - Bijoux - Décoration</p>
             </div>
         </div>
+    </div>
 <!-- -- -- -- -- -- -- -- NAVIGATION -- -- -- -- -- -- -- -- -->
 <?php fct_BuildMenu($strScriptName); ?>
+<!-- -- -- -- -- -- -- -- MININAV -- -- -- -- -- -- -- -- -->
+    <nav id="creationstypes-mini-nav">
+<?php   $strClassBase = 'creationstype-mini-nav-item';
+        for($i = 0; $i < count($tabCreationsTypes); $i++) {
+                if($i == 0) {
+                    $strClass = $strClassBase . ' ' . "menu-item-first";
+                } elseif ($i == count($tabCreationsTypes) - 1) {
+                    $strClass = $strClassBase . ' ' . "menu-item-last";
+                } else {
+                    $strClass = $strClassBase . ' ' . "menu-item-middles";
+                }  ?>
+            <div class="<?php echo $strClass;?>">
+                <a href="creations.php#<?php echo $tabCreationsTypes[$i]['Ticker'];?>">
+                    <span class="<?php echo $tabCreationsTypes[$i]['Icon'];?>"></span><?php echo $tabCreationsTypes[$i]['Name'];?></a>
+            </div>
+<?php   } ?>
+    </nav>
 <!-- -- -- -- -- -- -- -- CONTENT -- -- -- -- -- -- -- -- -->
-
+    <div id="creations-main">
+<?php   foreach($tabCreationsTypes as $tabCreationType) { ?>
+        <div class="creations-type" id="<?php echo $tabCreationType['Ticker'];?>">
+            <h2><span class="<?php echo $tabCreationType['Icon'];?>"></span><?php echo $tabCreationType['Name'];?></h2>
+            <div class="creations-type-content">
+<?php       foreach($tabCreations as $tabCreation) {
+                if($tabCreation['TypeCreation'] == $tabCreationType['Id']){ ?>
+                <div class="creation-item">
+                    <figure><img src="../media/pictures/<?php echo $tabCreation['MainPicture'];?>" alt="<?php echo $tabCreation['Name'];?>" aria-label="Picture of <?php echo $tabCreation['Name'];?>">
+                        <figcaption><?php echo $tabCreation['Name'];?></figcaption>
+                    </figure>
+                    <div class="creation-description">
+                        <?php echo $tabCreation['Name'];?>
+                    </div>
+                </div>
+<?php           }
+            } ?>
+            </div>
+        </div>
+<?php   } ?>
     </div>
+<!-- -- -- -- -- -- -- -- JAVASCRIPT -- -- -- -- -- -- -- -- -->
+    <script src="../scripts/js/main.js"></script>
+    <script src="https://kit.fontawesome.com/91b2ef136e.js" crossorigin="anonymous"></script>
     <script src="../scripts/js/main.js"></script>
 </body>
 </html>

@@ -26,6 +26,7 @@ $tabPageInfos = fct_SelectPage($strScriptName);
 // Table    : contacts informations
 $tabContactsInfos = fct_SelectContacts();
 ?>
+<!-- --- --- --- --- --- LA PETITE HEBENISTERIE EN HERBE --- --- --- --- -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -66,18 +67,16 @@ $tabContactsInfos = fct_SelectContacts();
     <div id="contacts-main">
 <?php   for($i=0; $i<count($tabContactsInfos); $i++){
             $strIconClasse = $tabContactsInfos[$i]['Icon'];
-
-
 ?>
         <div class="contacts-item">
             <div class="social-icon"><span class="<?php echo $strIconClasse;?>"></span></div>
             <div class="social-name"><?php echo $tabContactsInfos[$i]['Network'];?></div>
 <?php       if($tabContactsInfos[$i]['Network'] == 'Téléphone'){
 ?>
-            <div class="social-phone"><?php echo $tabContactsInfos[$i]['Url'];?></div>
+            <div class="social-phone" title="French number, for international calls please dial remplacing the '0' starting the phone number by '+33'."><?php echo $tabContactsInfos[$i]['Url'];?></div>
 <?php       } elseif($tabContactsInfos[$i]['Network'] == 'Email'){ ?>
             <div class="social-mail">
-                <a href="mailto:<?php echo $tabContactsInfos[$i]['Url'];?>">La Petite Ébénisterie en Herbe</a>
+                <a href="mailto:<?php echo $tabContactsInfos[$i]['Url'];?>" title="Envoyer un email à la Petite Ébénisterie en Herbe...">petitebenisterie@gmail.com</a>
             </div>
 <?php       } else { ?>
             

@@ -1,0 +1,150 @@
+/*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***/
+/*  Project      : La Petite Ébénisterie en Herbe
+    Context      : showcase website of a starting business in Ardèche, France,
+                   specializing in the design & manufacturing of wooden furnitures & objects
+    File         : creations.css
+    Role         : css for the "Créations" page of the website
+    Author       : Frédéric DANIAU
+    Creation     : 2023-06-04
+    Last update  : 2021-06-04
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***/
+/* COLORS
+
+*/
+/* *** * FONTS * *** */
+
+/* *** * CONTAINERS * *** */
+#creations-main {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 30px;
+    padding: 5px 20px;
+    text-align: center;
+}
+.creations-type {
+    background-color: #42291a;
+    background-repeat: repeat-y;
+    background-size: cover;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 20px;
+    padding: 5px 30px 10px 30px;
+    border: 2px solid #000;
+    border-radius: 50px;
+    box-shadow: 2px 2px 2px #555;
+    color: #182818;
+    text-shadow: 2px 2px #ca9c51;
+    text-align: center;
+}
+.creations-type-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.creation-item {
+    background: url("../../media/backgrounds/whitewood01.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    padding: 0 20px 10px 10px;
+    border: 1px solid #275a27;
+    border-radius: 50px;
+}
+/* *** * MAIN * *** */
+
+/* *** * NAVIGATION * *** */
+#creationstypes-mini-nav {
+    opacity: 0.95;
+    background-color: transparent;
+    background-image: url("../../media/backgrounds/lightwood_02.jpg");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    margin: 20px auto;
+    padding: 10px 0;
+    border: 3px solid #275a27;
+    border-radius: 50px;
+    text-align: center;
+    text-shadow: 2px 2px #ca9c51;
+}
+.creationstype-mini-nav-item {
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 30px;
+    font-family: "Calistoga";
+    font-size: 36px;
+    letter-spacing: 0.5em;
+}
+.creationstype-mini-nav-item a {
+    background-color: transparent;
+    padding: 10px auto;
+    transition: all 1.75s ease;
+}
+.creationstype-mini-nav-item:hover {
+    background-color: #182818;
+    text-shadow: #555;
+}
+.creationstype-mini-nav-item a span {
+    margin-right: 20px;
+}
+/* *** * CONTENT * *** */
+.creations-type h2 {
+    background: url("../../media/backgrounds/lightwood_02.jpg");
+    margin: 5px 10px;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 50px;
+    box-shadow: 2px 2px 2px #555;
+    font-family: "Calistoga";
+    font-size: 36px;
+    letter-spacing: 0.4em;
+    font-variant: small-caps;
+    text-shadow: 2px 2px #ca9c51;
+}
+.creations-type h2 span {
+    margin-right: 20px;
+}
+
+/* *** * IMAGES * *** */
+figure {
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    padding: 5px;
+    border: none;
+    border-radius: 50px;
+    text-align: center;
+}
+figure img {
+    width: 80%;
+    display: block;
+    margin: 10px;
+    border: 1px solid #275a27;
+    border-radius: 50px;
+}
+figure figcaption {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50px;
+    font-family: "Finger Paint", cursive;
+    font-size: 28px;
+    color: #ca9c51;
+    letter-spacing: 0.125em;
+    font-variant: small-caps;
+    text-shadow: 2px 1px #275a27;
+}
+/* *** * FORMS * *** */
+/* *** * TABLES * *** */
+
+/* *** * MEDIA QUERIES * *** */
+/* *** * ANIMATIONS * *** */

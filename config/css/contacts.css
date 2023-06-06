@@ -15,13 +15,13 @@
 
 /* *** * CONTAINERS * *** */
 #contacts-main {
-    border: 3px solid #000;
-    margin: 20px;
+    width: 70%;
+    margin: 20px auto;
     display: block;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: url("../../media/backgrounds/wood_01.jpg");
+    background: url("../../media/backgrounds/whitewood01.jpeg");
     background-size: cover;
     border: 3px solid #000;
     border-radius: 50px;
@@ -34,10 +34,13 @@
     display: flex;
     justify-content: left;
     align-items: space-between;
-    margin: 20px 15%;
+    margin: 20px 5%;
     padding: 20px;
     color: #182818;
-    text-shadow: 2px 2px #ca9c51;
+    text-shadow: 1px 1px #000;
+    border: 1px solid #000;
+    border-radius: 20px;
+    box-shadow: 3px 2px 4px #182818;
 }
 /* *** * MAIN * *** */
 .social-icon {
@@ -52,7 +55,7 @@
     text-align: center;
     font-family: "Calistoga";
     font-size: 24px;
-    border: 1px solid #000;
+    letter-spacing: 0.15em;
 }
 .social-phone {
     width: 100%;
@@ -71,10 +74,13 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 26px;
+
 }
 .social-mail a{
+    font-family: "Courier New", Courier, monospace;
+    font-size: 22px;
     animation: contact-blink 2s infinite;
+    font-variant: normal;
 }
 .social-link {
     display: block;
@@ -87,8 +93,6 @@
 /* *** * IMAGES * *** */
 /* *** * FORMS * *** */
 /* *** * TABLES * *** */
-
-/* *** * MEDIA QUERIES * *** */
 /* *** * ANIMATIONS * *** */
 @keyframes contact-blink {
     0% {
@@ -104,3 +108,4 @@
         text-shadow: 2px 2px #ca9c51;
     }
 }
+/* *** * MEDIA QUERIES * *** */

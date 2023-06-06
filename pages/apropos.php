@@ -75,6 +75,12 @@ $tabSectionsInfos = fct_SelectSectionsByRubricId($tabPageInfos['RubricId']);
         <div id="apropos-text">
             <p><?php echo $tabSectionsInfos[0]['Content'];?></p>
         </div>
+        <div id="estampille-text">
+            <img src="../media/logos/logo2.png" alt="Estampille" id="" aria-label="Estampille picture">
+            La première création de la Petite Ébénisterie en Herbe c’est son Estampille ou Logo.<br>Elle constitue la combinaison de plusieurs symboles : la vague centrale représentant la fusion des initiales F et D,
+le cercle représentant la pleine lune, symbole de l'apogée, de la maturité et de la consécration.<br>La lune est un symbole de féminité et l'un des trois astres (avec la terre et le soleil) qui rythment la Vie et l’ordre de la Nature.
+<br>Les pyramides enfin, symboles d'éternité et de protection.<br>L'Estampille est mise en perspective afin de donner relief et mouvement.
+        </div>
     </section>
     
 <!-- -- -- -- -- -- -- -- JAVASCRIPT -- -- -- -- -- -- -- -- -->
