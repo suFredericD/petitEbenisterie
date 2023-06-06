@@ -138,7 +138,7 @@ a:hover {
     padding: 10px;
     font-size: 50px;    
 }
-  .rubrics-item {
+.rubrics-item {
     opacity: 1;
     width: 45%;
     position: relative;
@@ -156,8 +156,8 @@ a:hover {
     box-shadow: 2px 4px 3px #000;
     color: #000;
     text-shadow: 1px 1px #000;
-  }
-  .home-rubric-title {
+}
+.home-rubric-title {
     background: url("../../media/backgrounds/lightwood_02.jpg");
     width: 100%;
     margin: 0;
@@ -166,13 +166,13 @@ a:hover {
     border: none;
     border-radius: 25px;
     transition: all 0.5s ease;
-  }
-  .home-rubric-title:hover {
+}
+.home-rubric-title:hover {
     background: url("../../media/backgrounds/wood_02.jpg");
     color: #331b00;
     text-shadow: 2px 3px #000;
-  }
-  .home-rubric-title h2 {
+}
+.home-rubric-title h2 {
     width: 100%;
     background-color: transparent;
     background: url("../../media/backgrounds/lightwood_02.jpg");
@@ -186,13 +186,13 @@ a:hover {
     letter-spacing: 0.125em;
     font-variant: small-caps;
     text-align: center;
-  }
-  .rubrics-item-container {
+}
+.rubrics-item-container {
     width: 100%;
     align-items: flex-start;
     justify-content: space-between;
-  }
-  .rubric-img-container {
+}
+.rubric-img-container {
     width: 100%;
     display: flex;
     justify-content: flex-start;
@@ -210,30 +210,25 @@ a:hover {
     font-size: 34px;
     vertical-align: middle;
     text-align: left;
-    font-family: "Finger Paint";
-    font-weight: bold;
-    color: #182818;
+    font-family: "Finger Paint", cursive;
+    color: #006108;
     text-shadow: 2px 2px 2px #ca9c51;
     letter-spacing: 0.12em;
-  }
-  .home-rubric-img-link {
-
-  }
-  .rubrics-item img {
-    margin-right: 20px;
-    border: 3px inset #331b00;
-    border-radius: 50px;
-    font-family: "Ubuntu", sans-serif;
-    font-size: 16px;
-  }
-  .rubrics-img-main {
+}
+.home-rubric-img-link {
+    margin: 0;
+    padding: 0;
+}
+.rubrics-img-main {
     width: 80%;
     opacity: 0.95;
-  }
+    margin-right: 0px;
+    border: 3px inset #331b00;
+    border-radius: 50px;
+}
   .index-rubric-description p {
     opacity: 1;
     display: inline-block;
-    /* background-color: #182818; */
     margin-top: 10px;
     margin-bottom: 0;
     padding-top: 10px;
@@ -252,10 +247,9 @@ a:hover {
 .index-rubric-description p::first-letter {
     color: #92ca51;
     font-size: 24px;
-    
 }
 .index-rubric-description p a {
-    font-family: "Crafty Girls", incursive;
+    font-family: "Crafty Girls", cursive;
     font-size: 20px;
     text-decoration: underline;
     color: #331b00;
@@ -351,19 +345,94 @@ a:hover {
 }
 /* *** * MEDIA QUERIES * *** */
 @media screen and (max-width: 1200px) {
-
+  #menubar {
+    font-size: 24px;
+  }
+  .rubric-img-container {
+    font-size: 28px;
+  }
+  .index-rubric-description p, .index-rubric-description p a  {
+    font-size: 18px;
+  }
 }
 @media screen and (max-width: 992px) {
-
+  #menubar {
+    font-size: 18px;
+  }
+  #home-header h1{
+    font-size: 40px;
+  }
+  .rubrics-item {
+    width: 90%;
+  }
+  .home-rubric-img-link, .rubric-img-container {
+    width: 100%;
+  }
+  .rubric-img-container {
+    font-size: 20px;
+  }
+  .index-rubric-description p, .index-rubric-description p a {
+    font-size: 14px;
+    text-align: left;
+  }
 }
 @media screen and (max-width: 768px) {
-
+  #header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  #header p {
+    font-size: 16px;
+    padding: 5px;
+  }
+  #menubar {
+    width: 90%;
+    font-size: 13px;
+  }
+  #home-header h1{
+    font-size: 30px;
+  }
+  .home-rubric-title h2 {
+    font-size: 28px;
+  }
 }
 @media screen and (max-width: 576px) {
-
+  #home-header h1{
+    font-size: 20px;
+  }
+  #home-header span{
+    font-size: 40px;
+  }
+  .home-rubric-title h2 {
+    font-size: 24px;
+  }
+  .rubric-img-container {
+    font-size: 16px;
+  }
 }
 @media screen and (max-width: 480px) {
-
+  #header h1 {
+    font-size: 26px;
+    margin-bottom: 4px;
+  }
+  #header p {
+    font-size: 14px;
+    padding: 2px;
+  }
+  #menubar {
+    width: 90%;
+    font-size: 9px;
+  }
+  .home-rubric-title h2 {
+    font-size: 20px;
+  }
+  .rubric-img-container {
+    font-size: 12px;
+  }
+  .index-rubric-description p, .index-rubric-description p a {
+    font-size: 10px;
+    text-align: left;
+  }
 }
 @media screen and (max-width: 360px) {
 
