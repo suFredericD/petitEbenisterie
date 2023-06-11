@@ -1,0 +1,6 @@
+# All SQL scripts
+*.sql
+# DBB connection parameters file
+admin/dbConfig.php
+# DBB request builder file
+admin/dbRequestBuilder.php
